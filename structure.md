@@ -15,7 +15,11 @@ OpenShift Console プロジェクトのドキュメントは以下のように�
 
 ### 言語別ドキュメント
 
-- `docs/oidc-ja.md` - OpenID Connect 認証の日本語ドキュメント
+- `docs/oidc-ja.md` - OpenID Connect 認証と詳細な設定方法の日本語ドキュメント
+- `docs/rbac-ja.md` - ロールベースアクセス制御 (RBAC) の日本語ドキュメント
+- `docs/kubernetes-deploy-ja.md` - バニラKubernetesへのデプロイ方法の日本語ドキュメント
+- `docs/prebuilt-images-ja.md` - ビルド済みイメージを利用する方法の日本語ドキュメント
+- `docs/troubleshooting-qa-ja.md` - エラーの対処法 Q&A の日本語ドキュメント
 
 ### 機能別ドキュメント
 

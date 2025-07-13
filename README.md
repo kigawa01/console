@@ -498,7 +498,11 @@ Currently this feature is behind feature gate.
 
 ## 日本語ドキュメント
 
-- [OpenID Connect (OIDC) 認証](./docs/oidc-ja.md)
+- [OpenID Connect (OIDC) 認証と設定方法](./docs/oidc-ja.md)
+- [ロールベースアクセス制御 (RBAC)](./docs/rbac-ja.md)
+- [バニラKubernetesへのデプロイ方法](./docs/kubernetes-deploy-ja.md)
+- [ビルド済みイメージを利用する方法](./docs/prebuilt-images-ja.md)
+- [エラーの対処法 Q&A](./docs/troubleshooting-qa-ja.md)
 
 ## Frontend Packages
 - [console-dynamic-plugin-sdk](./frontend/packages/console-dynamic-plugin-sdk/README.md)
