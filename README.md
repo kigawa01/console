@@ -481,6 +481,25 @@ The list is extended automatically by the console server with following CSP dire
 
 Currently this feature is behind feature gate.
 
+## ログとメトリクス
+
+### 認証メトリクスのログ記録
+
+コンソールはユーザー認証に関するメトリクスを収集します。これにはログイン試行、成功、失敗などが含まれます。これらのメトリクスは使用パターンの監視や潜在的な問題の特定に役立ちます。
+
+通常の操作中、認証メトリクスコードはユーザーロールの確認時に「Unauthorized」エラーに遭遇することがあります。これらのエラーは予想されるものであり、実際の問題を示すものではありません。ログのノイズを減らすため、これらの予想されるエラーはエラー（`klog.Errorf`）としてではなく、詳細レベル4（`klog.V(4).Infof`）でログに記録されます。
+
+具体的には、`pkg/auth/metrics.go`の以下の関数がこのログ記録アプローチを使用しています：
+
+- `canGetNamespaces()`：クライアント作成エラーとAPIリクエストエラーをレベルV(4)でログに記録
+- `isKubeAdmin()`：クライアント作成エラーとAPIリクエストエラーをレベルV(4)でログに記録
+
+これにより、ログがクリーンに保たれ、実際のエラーがより目立つようになります。また、より高い詳細レベルが有効になっている場合は、詳細な情報も提供されます。
+
+## 日本語ドキュメント
+
+- [OpenID Connect (OIDC) 認証](./docs/oidc-ja.md)
+
 ## Frontend Packages
 - [console-dynamic-plugin-sdk](./frontend/packages/console-dynamic-plugin-sdk/README.md)
 [[API]](./frontend/packages/console-dynamic-plugin-sdk/docs/api.md)
